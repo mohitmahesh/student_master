@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prinipal Home</title>
+</head>
+<body>
+    <h1>Principal Home</h1>
+    <form action="" method="POST">
+            {% csrf_token %}
+        <h2>Add Teacher :</h2>
+        <input type="text" name="addteacher" hidden>
+        Teacher Name : <input type="text" name="username" id=""><br><br>
+        Password : <input type="password" name="password" id=""><br><br>
+        Subject : 
+        <select name="subject">
+            <option value="phy">Physics</option>
+            <option value="chem">Chemistry</option>
+            <option value="math">Math</option>
+            <option value="comp">Computer</option>
+            <option value="eng">English</option>
+        </select>
+        <button type="submit">Add Teacher</button>
+    </form>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2>Remove Teacher :</h2>
+        <input type="text" name="removeteacher" hidden>
+        Choose Teacher to cut the scene : 
+        <select name="teacherid">
+            {% for teacher in teachers %}
+                <option value={{teacher.teacher.id}}>{{teacher.teacher.username}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Remove Teacher</button>
+    </form>
+    
+</body>
+</html>

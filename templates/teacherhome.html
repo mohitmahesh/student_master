@@ -1,0 +1,79 @@
+<html>
+<head>
+  <title> Student Report Card </title>
+  <h2> Student Report Card </h2>
+</head>
+<body>
+<h1>Add Student</h1>
+<form action="#" method="post">
+  {% csrf_token %}
+  <input type="text" name="add-student" hidden>
+  Username : <input type="text" name="username" id=""><br><br>
+  Password : <input type="password" name="password" id=""><br><br>
+  Father name : <input type="text" name="f-name" id=""><br><br>
+  Mother name : <input type="text" name="m-name" id=""><br><br>
+  Rollno : <input type="number" name="rollno" id=""><br><br>
+  DOB : <input type="date" name="dob" id=""><br><br>
+  <button type="submit">Add student</button>
+</form>
+<h1>Change Student Details</h1>
+<form action="#" method="POST">
+    {% csrf_token %}
+  <input type="text" name="change-marks" hidden>
+  <h4>Pick Student: </h4>
+  <select name="student" id="">
+    {% for student in students %}
+    <option value="{{student.user.username}}">{{ student.user.username }}</option>
+    {% endfor %}
+  </select>
+  <h4>Pick Exam: </h4>
+  <select name="exam" id="">
+    <option value="Term1">Term 1</option>
+    <option value="Term2">Term 2</option>
+    <option value="Finals">Final</option>
+  </select>
+  <br><br>
+  <h4>Marks:</h4>
+  <input type="number" name="marks" id="">
+  <br><br><br>
+  <button type="submit">Change Marks</button>
+</form>
+
+ALL STUDENT DETAILS : <br>
+{% for student in students %}
+    Name : {{student.user.username}} Rollno : {{student.rollno}} 
+    <br>
+{% endfor %}
+
+<a href="{% url 'logout' %}"> LOGOUT </a>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.

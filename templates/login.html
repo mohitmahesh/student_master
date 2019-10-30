@@ -1,0 +1,59 @@
+
+
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Literata&display=swap" rel="stylesheet">
+
+<style>
+input[type=text], input[type=password] {
+  width: 28%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #0;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0; 
+  border: none;
+  cursor: pointer;
+  width: 18%;
+}
+body{
+
+  background: url('newbg.jpg');
+
+}
+
+font-family: 'Literata',Arial, Helvetica, sans-serif;
+background-color: white;
+}
+img.avatar {
+  width: 10%;
+  border-radius: 60%;
+}
+</style>
+</head>
+<form action="#" method="post">
+{%csrf_token%}
+<center>
+<div class="imgcontainer">
+    <img src="https://portal-usa-edu.com/Content/login/student%202.png" alt="Avatar" height="250" width="250">
+</div>
+<input type="text" name="username" placeholder="Username" {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}><br>
+<input type="password" name="password" placeholder="Password"><br>
+<button type="submit">LOGIN</button>
+</center>
+</form>
+</body>
+</html>
